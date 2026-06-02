@@ -1,0 +1,21 @@
+body {
+    background-color: bisque;
+}
+
+#Container {
+    display: flex;
+
+}
+
+nav {
+    background-color: aqua;
+    /* border-radius: 20px; */
+    width: 250px;
+}
+
+#Content {
+    text-align: center;
+    background-color: blueviolet;
+    height: 100%;
+    flex: 1;
+}
