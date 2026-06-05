@@ -1,21 +1,36 @@
 body {
+    margin: 0;
     background-color: bisque;
 }
 
-#Container {
+.Container {
     display: flex;
-
+    min-height: 100vh;
 }
 
-nav {
-    background-color: aqua;
-    /* border-radius: 20px; */
+#sidebar {
     width: 250px;
+    background-color: aqua;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+#sidebar.collapsed {
+    width: 0;
 }
 
 #Content {
-    text-align: center;
-    background-color: blueviolet;
-    height: 100%;
     flex: 1;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+#toggleBtn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+#thing1 {
+    
 }
