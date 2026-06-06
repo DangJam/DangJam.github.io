@@ -37,6 +37,14 @@ body {
     position: sticky;
     top: 0;
     align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+#sidebar.close {
+    padding: 5px;
+    width: 60px;
 }
 
 #sidebar ul {
@@ -122,7 +130,7 @@ body {
 }
 
 #toggle-btn:hover {
-    
+    background-color: var(--hover-clr);
 }
 
 .dropdown-btn {
