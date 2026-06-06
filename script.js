@@ -1,6 +1,4 @@
-const button = document.getElementById("toggleBtn");
-const sidebar = document.getElementById("sidebar");
-
-button.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
-});
+function toggleSubMenu(button){
+    button.nextElementSibling.classList.toggle('show')
+    button.classList.toggle('rotate')
+}

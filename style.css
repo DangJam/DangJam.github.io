@@ -1,36 +1,152 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+:root{
+    --base-clr: #202020;
+    --line-clr: #000000;
+    --hover-clr: #000000;
+    --text-clr: #ffffff;
+    --accent-clr: #7f2ae8;
+    --secondary-text-clr: #f0f0f0;
+}
+
+*{
     margin: 0;
-    background-color: bisque;
+    padding: 0;
 }
 
-.Container {
-    display: flex;
+html {
+    font-family: "Nunito";
+    line-height: 1.5rem;
+}
+
+body {
     min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
-#sidebar {
+#sidebar{
+    box-sizing: border-box;
+    height: 100vh;
     width: 250px;
-    background-color: aqua;
-    overflow: hidden;
-    transition: width 0.3s ease;
+    padding: 5px 1em;
+    background-color: var(--base-clr);
+    border-right: 1px solid var(--line-clr);
+    position: sticky;
+    top: 0;
+    align-self: start;
 }
 
-#sidebar.collapsed {
-    width: 0;
+#sidebar ul {
+    list-style: none;
 }
 
-#Content {
-    flex: 1;
-    background-color: blueviolet;
-    text-align: center;
+#sidebar > ul > li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    .logo {
+        font-weight: 600;
+    }
 }
 
-#toggleBtn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+#sidebar ul li.active a{
+    color:var(--accent-clr);
+    svg{
+        fill:var(--accent-clr);
+    }
 }
 
-#thing1 {
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo {
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(--text-clr);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#sidebar svg {
+    flex-shrink: 0;
+    fill: var(--text-clr);
+}
+
+#sidebar a span, #sidebar .dropdown-btn span {
+    flex-grow: 1;
+}
+
+#sidebar a:hover, #sidebar .dropdown-btn:hover {
+    background-color: var(--hover-clr);
+}
+
+#sidebar .sub-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    > div {
+        overflow: hidden;
+    }
+}
+
+#sidebar .sub-menu.show {
+    grid-template-rows: 1fr;
+}
+
+.dropdown-btn svg {
+    transition: 200ms ease;
+}
+
+.rotate svg:last-child {
+    rotate: 180deg;
+}
+
+#sidebar .sub-menu a {
+    padding-left: 2em;
+}
+
+#toggle-btn {
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg {
+        transition: rotate 150ms ease;
+    }
+}
+
+#toggle-btn:hover {
     
+}
+
+.dropdown-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+main {
+    padding: min(30px, 7%);
+}
+
+main p{
+    color: var(--secondary-text-clr);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.container {
+    border: 1px solid var(--line-clr);
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: min(3em, 15%);
 }
